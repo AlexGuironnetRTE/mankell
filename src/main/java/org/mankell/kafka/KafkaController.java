@@ -3,10 +3,8 @@ package org.mankell.kafka;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.mankell.model.iss.ISSPassesReport;
 
 @RestController
 @RequestMapping(value = "/kafka")
@@ -16,19 +14,18 @@ public class KafkaController {
 
     private final Logger logger = LoggerFactory.getLogger(KafkaController.class);
 
-    private final Producer producer;
+    private final KafkaProducer kafkaProducer;
 
     @Autowired
-    public KafkaController(Producer producer) {
+    public KafkaController(KafkaProducer kafkaProducer) {
 
-        this.producer = producer;
+        this.kafkaProducer = kafkaProducer;
 
     }
 
     @PostMapping(value = "/publish")
-    public void sendMessageToKafkaTopic(@RequestParam("message") String message){
-        logger.info("Publish endpoint was reached.");
-        this.producer.sendMessage(message);
+    public void sendMessageToKafkaTopic(@RequestBody ISSPassesReport issPassesReport){ //TODO Generic message type with metadata and inheritance from data object
+        this.kafkaProducer.sendMessage(issPassesReport);
 
     }
 

@@ -6,14 +6,13 @@ import org.mankell.operatorfabric.CardPublisher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Consumer {
+public class KafkaConsumer {
 
-    private final Logger logger = LoggerFactory.getLogger(Consumer.class);
+    private final Logger logger = LoggerFactory.getLogger(KafkaConsumer.class);
 
     @Autowired
     CardPublisher cardPublisher;

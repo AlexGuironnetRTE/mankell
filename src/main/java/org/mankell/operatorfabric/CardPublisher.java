@@ -1,6 +1,7 @@
 package org.mankell.operatorfabric;
 
 import org.lfenergy.operatorfabric.cards.model.*;
+import org.mankell.model.iss.ISSPassesReport;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -20,7 +21,7 @@ public class CardPublisher {
 
         card.setProcess("process");
         card.setProcessId("process0");
-        card.setPublisher("TEST");
+        card.setPublisher("TEST"); //TODO Create ISS Bundle
         card.setPublisherVersion("1");
 
         card.setLttd(Instant.now().toEpochMilli());
@@ -35,14 +36,14 @@ public class CardPublisher {
         card.setRecipient(adminUser);
 
         I18n i18nTitle = new I18n();
-        i18nTitle.setKey("random.title");
+        i18nTitle.setKey("process.title");
         HashMap<String,String> i18nTitleParams = new HashMap<>();
         i18nTitleParams.put("value","0");
         i18nTitle.setParameters(i18nTitleParams);
         card.setTitle(i18nTitle);
 
         I18n i18nSummary = new I18n();
-        i18nSummary.setKey("random.summary");
+        i18nSummary.setKey("process.summary");
         HashMap<String,String> i18nSummaryParams = new HashMap<>();
         i18nSummaryParams.put("value",message);
         i18nSummary.setParameters(i18nSummaryParams);
