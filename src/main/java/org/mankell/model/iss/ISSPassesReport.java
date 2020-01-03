@@ -1,9 +1,6 @@
 package org.mankell.model.iss;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -26,6 +23,18 @@ public class ISSPassesReport {
 
     public List<ISSPass> getResponse() {
         return response;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setRequest(ISSRequest request) {
+        this.request = request;
+    }
+
+    public void setResponse(List<ISSPass> response) {
+        this.response = response;
     }
 }
 

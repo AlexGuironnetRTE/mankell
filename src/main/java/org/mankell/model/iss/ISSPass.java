@@ -18,4 +18,12 @@ public class ISSPass {
     public long getRiseTime() {
         return riseTime;
     }
+
+    public void setDuration(double duration) {
+        this.duration = duration;
+    }
+
+    public void setRiseTime(long riseTime) {
+        this.riseTime = riseTime;
+    }
 }

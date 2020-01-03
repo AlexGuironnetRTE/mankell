@@ -15,7 +15,7 @@ import java.util.HashMap;
 @Service
 public class CardPublisher {
 
-    public Card createSimpleCard(String message) {
+    public Card createSimpleCard(ISSPassesReport issPassesReport) {
 
         Card card = new Card();
 
@@ -45,13 +45,13 @@ public class CardPublisher {
         I18n i18nSummary = new I18n();
         i18nSummary.setKey("process.summary");
         HashMap<String,String> i18nSummaryParams = new HashMap<>();
-        i18nSummaryParams.put("value",message);
+        i18nSummaryParams.put("value",issPassesReport.getMessage());
         i18nSummary.setParameters(i18nSummaryParams);
         card.setSummary(i18nSummary);
 
         card.setState("firstState");
 
-        card.setData(message);
+        card.setData(issPassesReport);
 
         return card;
     }

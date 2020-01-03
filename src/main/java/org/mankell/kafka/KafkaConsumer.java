@@ -2,6 +2,7 @@ package org.mankell.kafka;
 
 import org.lfenergy.operatorfabric.cards.model.Card;
 import org.lfenergy.operatorfabric.cards.model.CardCreationReport;
+import org.mankell.model.iss.ISSPassesReport;
 import org.mankell.operatorfabric.CardPublisher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,12 +19,11 @@ public class KafkaConsumer {
     CardPublisher cardPublisher;
 
     @KafkaListener(topics = "users", groupId = "group_id")
+    public void consume(ISSPassesReport issPassesReport){
 
-    public void consume(String message){
+        logger.info(String.format("$$ -> Consumed Message -> %s", issPassesReport));
 
-        logger.info(String.format("$$ -> Consumed Message -> %s",message));
-
-        Card card = cardPublisher.createSimpleCard(message);
+        Card card = cardPublisher.createSimpleCard(issPassesReport);
 
         logger.info("Created card: "+card.toString());
 

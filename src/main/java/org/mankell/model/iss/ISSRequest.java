@@ -36,4 +36,24 @@ public class ISSRequest {
     public int getPasses() {
         return passes;
     }
+
+    public void setAltitude(double altitude) {
+        this.altitude = altitude;
+    }
+
+    public void setDatetime(long datetime) {
+        this.datetime = datetime;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public void setPasses(int passes) {
+        this.passes = passes;
+    }
 }
