@@ -22,7 +22,7 @@ public class CardPublisher {
         String process = "passes_process";
 
         card.setProcess(process);
-        card.setProcessId(process+"0");
+        card.setProcessId(process+issPassesReport.getRequest().getLatitude()+"_"+issPassesReport.getRequest().getLongitude());
         card.setPublisher("ISS"); //TODO Create ISS Bundle
         card.setPublisherVersion("1");
 
@@ -40,7 +40,7 @@ public class CardPublisher {
         I18n i18nTitle = new I18n();
         i18nTitle.setKey(process+".title");
         HashMap<String,String> i18nTitleParams = new HashMap<>();
-        i18nTitleParams.put("value","0");
+        i18nTitleParams.put("value","LAT "+issPassesReport.getRequest().getLatitude()+" LON "+issPassesReport.getRequest().getLongitude());
         i18nTitle.setParameters(i18nTitleParams);
         card.setTitle(i18nTitle);
 

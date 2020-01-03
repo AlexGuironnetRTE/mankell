@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 public class ISSPass {
 
     private double duration;
-    private long risetime;
+    private long risetime; //TODO Switch to instant (note that risetime is a timestamp in seconds)
 
     public double getDuration() {
         return duration;
