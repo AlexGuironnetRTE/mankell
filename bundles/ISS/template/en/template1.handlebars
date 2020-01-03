@@ -1,14 +1,27 @@
-<h1> Next {{card.data.request.passes}} passes of the ISS </h1>
-<h2> above LAT {{card.data.request.latitude}} and LON {{card.data.request.longitude}}</h2>
-
 <div>
+    <h2>Next {{card.data.request.passes}} passes of the ISS</h2>
+    <br>
+    <p>The table below gives the next {{card.data.request.passes}} passes of the ISS over the following location :
     <ul>
-        {{#card.data.response}}
-            <li>
-                Bla
-                {{duration}}
-                {{risetime}}
-            </li>
-        {{/card.data.response}}
+        <li>Latitude: {{card.data.request.latitude}}</li>
+        <li>Longitude: {{card.data.request.longitude}}</li>
     </ul>
+    </p>
+    <br>
 </div>
+    <table class="table-dark table-responsive table-bordered">
+        <thead class="thead-light">
+        <tr>
+            <th>When</th>
+            <th>For How Long?</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#card.data.response}}
+            <tr>
+                <td>{{dateFormat risetime format="MM-DD-YYYY HH:mm:ss"}} ({{risetime}})</td>
+                <td>{{duration}}</td>
+            </tr>
+        {{/card.data.response}}
+        </tbody>
+    </table>
