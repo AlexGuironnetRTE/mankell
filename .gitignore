@@ -56,6 +56,9 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# Dependencies that can't be pulled from Maven
+/libs
+
 ### Intellij+all Patch ###
 # Ignores the whole idea folder
 # See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
