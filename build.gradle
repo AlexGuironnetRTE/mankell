@@ -24,8 +24,11 @@ repositories {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+//TODO Specify versions? At least boot version
+
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.kafka:spring-kafka')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('com.jayway.jsonpath:json-path')
 }
