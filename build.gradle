@@ -24,6 +24,8 @@ repositories {
     }
 }
 
+//TODO Add gradle task to generate tar.gz from bundles in build directory
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 

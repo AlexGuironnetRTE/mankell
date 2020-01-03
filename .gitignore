@@ -59,6 +59,9 @@ fabric.properties
 # Dependencies that can't be pulled from Maven
 /libs
 
+# Tar.gz bundles
+bundles/**/*.tar.gz
+
 ### Intellij+all Patch ###
 # Ignores the whole idea folder
 # See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360

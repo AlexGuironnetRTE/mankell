@@ -15,20 +15,22 @@ import java.util.HashMap;
 @Service
 public class CardPublisher {
 
-    public Card createSimpleCard(ISSPassesReport issPassesReport) {
+    public Card createISSCard(ISSPassesReport issPassesReport) {
 
         Card card = new Card();
 
-        card.setProcess("process");
-        card.setProcessId("process0");
-        card.setPublisher("TEST"); //TODO Create ISS Bundle
+        String process = "passes_process";
+
+        card.setProcess(process);
+        card.setProcessId(process+"0");
+        card.setPublisher("ISS"); //TODO Create ISS Bundle
         card.setPublisherVersion("1");
 
         card.setLttd(Instant.now().toEpochMilli());
         card.setStartDate(Instant.now().toEpochMilli());
         card.setEndDate(Instant.now().toEpochMilli() + 2*60*60*1000);
 
-        card.setSeverity(SeverityEnum.QUESTION);
+        card.setSeverity(SeverityEnum.ACTION);
 
         Recipient adminUser = new Recipient();
         adminUser.setType(RecipientEnum.USER);
@@ -36,14 +38,14 @@ public class CardPublisher {
         card.setRecipient(adminUser);
 
         I18n i18nTitle = new I18n();
-        i18nTitle.setKey("process.title");
+        i18nTitle.setKey(process+".title");
         HashMap<String,String> i18nTitleParams = new HashMap<>();
         i18nTitleParams.put("value","0");
         i18nTitle.setParameters(i18nTitleParams);
         card.setTitle(i18nTitle);
 
         I18n i18nSummary = new I18n();
-        i18nSummary.setKey("process.summary");
+        i18nSummary.setKey(process+".summary");
         HashMap<String,String> i18nSummaryParams = new HashMap<>();
         i18nSummaryParams.put("value",issPassesReport.getMessage());
         i18nSummary.setParameters(i18nSummaryParams);

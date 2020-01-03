@@ -1,0 +1,19 @@
+{
+  "passes_process":{
+    "title": "ISS Process {{value}}",
+    "summary": "Status of the report: {{value}}",
+    "firstState": {
+      "detail": {
+        "tab": {
+          "first": "Table content"
+        }
+      }
+    }
+  },
+  "third":{
+    "label": "ISS App"
+  },
+  "menu":{
+    "first":"OpenNotify"
+  }
+}

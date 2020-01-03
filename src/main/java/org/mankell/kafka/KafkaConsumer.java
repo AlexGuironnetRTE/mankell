@@ -23,7 +23,7 @@ public class KafkaConsumer {
 
         logger.info(String.format("$$ -> Consumed Message -> %s", issPassesReport));
 
-        Card card = cardPublisher.createSimpleCard(issPassesReport);
+        Card card = cardPublisher.createISSCard(issPassesReport);
 
         logger.info("Created card: "+card.toString());
 

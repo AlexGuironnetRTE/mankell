@@ -1,0 +1,30 @@
+{
+  "name": "ISS",
+  "version": "1",
+  "defaultLocale": "en",
+  "templates": [
+    "template1"
+  ],
+  "csses": [
+  ],
+  "menuEntries": [
+    {"id": "uid test 0","url": "http://open-notify.org/","label": "menu.first"}
+  ],
+  "i18nLabelKey": "third.label",
+  "processes": {
+    "passes_process": {
+      "states": {
+        "firstState": {
+          "details": [
+            {
+              "title": {
+                "key": "passes_process.firstState.detail.tab.first"
+              },
+              "templateName": "template1"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
