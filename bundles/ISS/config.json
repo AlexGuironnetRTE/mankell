@@ -3,7 +3,8 @@
   "version": "1",
   "defaultLocale": "en",
   "templates": [
-    "template1"
+    "template1",
+    "template2"
   ],
   "csses": [
   ],
@@ -21,6 +22,12 @@
                 "key": "passes_process.firstState.detail.tab.first"
               },
               "templateName": "template1"
+            },
+            {
+              "title": {
+                "key": "passes_process.firstState.detail.tab.second"
+              },
+              "templateName": "template2"
             }
           ]
         }

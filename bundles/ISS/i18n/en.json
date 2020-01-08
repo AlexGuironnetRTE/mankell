@@ -1,11 +1,12 @@
 {
   "passes_process":{
-    "title": "ISS Process {{value}}",
+    "title": "ISS Passes {{value}}",
     "summary": "Status of the report: {{value}}",
     "firstState": {
       "detail": {
         "tab": {
-          "first": "Table content"
+          "first": "Table content",
+          "second": "Chart"
         }
       }
     }

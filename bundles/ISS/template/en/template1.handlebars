@@ -6,20 +6,22 @@
         <li>Latitude: {{card.data.request.latitude}}</li>
         <li>Longitude: {{card.data.request.longitude}}</li>
     </ul>
+    <br>
+    <p>Date of the request: {{dateFormat (math card.data.request.datetime  '*' 1000) format="MM-DD-YYYY HH:mm:ss"}}
     </p>
     <br>
 </div>
     <table class="table-dark table-responsive table-bordered">
         <thead class="thead-light">
         <tr>
-            <th>When</th>
-            <th>For How Long?</th>
+            <th>Time</th>
+            <th>Duration (s)</th>
         </tr>
         </thead>
         <tbody>
         {{#card.data.response}}
             <tr>
-                <td>{{dateFormat risetime format="MM-DD-YYYY HH:mm:ss"}} ({{risetime}})</td>
+                <td>{{dateFormat (math risetime '*' 1000) format="MMMM Do YYYY, h:mm:ss"}}</td>
                 <td>{{duration}}</td>
             </tr>
         {{/card.data.response}}
