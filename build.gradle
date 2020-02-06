@@ -36,7 +36,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.kafka:spring-kafka')
     compile('org.projectlombok:lombok')
-    compile name: 'cards-client-data-0.14.1.SNAPSHOT'
+    compile name: 'cards-client-data-0.15.1.SNAPSHOT'
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
